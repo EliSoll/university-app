@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface LecturerRepository extends JpaRepository<Lecturer, Long> {
-    List<Lecturer> findByNameContaining(String name);
+    List<Lecturer> findByNameContainingIgnoreCase(String name);
 }

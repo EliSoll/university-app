@@ -82,12 +82,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public List<String> globalSearch(String template) {
-        List<String> result = lecturerRepository.findByNameContaining(template).stream()
+        List<String> result = lecturerRepository.findByNameContainingIgnoreCase(template).stream()
                 .map(Lecturer::getName)
                 .toList();
-        if (result.isEmpty()) {
-            System.out.println("Not found");
-        }
         return result;
     }
 
