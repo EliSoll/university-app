@@ -1,6 +1,7 @@
 package com.university.app.services;
 
 import java.util.List;
+import com.university.app.dto.DepartmentStatistics;
 import com.university.app.models.Department;
 
 public interface DepartmentService {
@@ -8,7 +9,7 @@ public interface DepartmentService {
 
     String getHeadOfDepartment(String departmentName);
 
-    void getDepartmentStatistics(String departmentName);
+    DepartmentStatistics getDepartmentStatistics(String departmentName);
 
     double getAverageSalary(String departmentName);
 

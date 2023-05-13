@@ -1,5 +1,6 @@
 package com.university.app;
 
+import com.university.app.dto.DepartmentStatistics;
 import com.university.app.models.AcademicDegree;
 import com.university.app.models.Department;
 import com.university.app.models.Lecturer;
@@ -14,7 +15,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -45,7 +48,7 @@ public class UniversityBotApplication implements CommandLineRunner {
     public void run(String... args) {
         injectData();
         showGreetings();
-        showCommands();
+        runCommands();
     }
 
     public void showGreetings() {
@@ -55,15 +58,51 @@ public class UniversityBotApplication implements CommandLineRunner {
         System.out.print(greetings);
     }
 
-    public void showCommands() {
+    public void runCommands() {
+        Map<Integer, Runnable> commandMap = new HashMap<>();
+        commandMap.put(1, () -> {
+            System.out.print("Type your department: ");
+            String input = new Scanner(System.in).nextLine();
+            System.out.println(departmentService.getHeadOfDepartment(input));
+            runCommands();
+        });
+        commandMap.put(2, () -> {
+            System.out.print("Type your department: ");
+            String input = new Scanner(System.in).nextLine();
+            DepartmentStatistics stats = departmentService.getDepartmentStatistics(input);
+            System.out.println("Assistants: " + stats.assistantCount());
+            System.out.println("Associate professors: " + stats.associateProfessorCount());
+            System.out.println("Professors: " + stats.professorCount());
+            runCommands();
+        });
+        commandMap.put(3, () -> {
+            System.out.print("Type your department: ");
+            String input = new Scanner(System.in).nextLine();
+            System.out.println(departmentService.getAverageSalary(input));
+            runCommands();
+        });
+        commandMap.put(4, () -> {
+            System.out.print("Type your department: ");
+            String input = new Scanner(System.in).nextLine();
+            System.out.println(departmentService.getEmployeeCount(input));
+            runCommands();
+        });
+        commandMap.put(5, () -> {
+            System.out.print("Global search: ");
+            String input = new Scanner(System.in).nextLine();
+            System.out.println("Results: " + departmentService.globalSearch(input));
+            runCommands();
+        });
+        commandMap.put(6, () -> System.out.println("See you soon!"));
+
         String menu = "___________________________________________________\n"
-                + "Type 1: Who is head of department.\n"
+                + "Type 1: Who is the head of the department.\n"
                 + "___________________________________________________\n"
                 + "Type 2: Show department statistics.\n"
                 + "___________________________________________________\n"
                 + "Type 3: Show the average salary for the department.\n"
                 + "___________________________________________________\n"
-                + "Type 4: Show count of employee for the department.\n"
+                + "Type 4: Show the count of employees for the department.\n"
                 + "___________________________________________________\n"
                 + "Type 5: Global search.\n"
                 + "___________________________________________________\n"
@@ -71,47 +110,12 @@ public class UniversityBotApplication implements CommandLineRunner {
                 + "___________________________________________________\n"
                 + "Type here: ";
         System.out.print(menu);
-        String input;
         Scanner scanner = new Scanner(System.in);
-        Scanner in = new Scanner(System.in);
         int answer = scanner.nextInt();
-        String typeName = "Type your department:";
-
-        switch (answer) {
-            case 1:
-                System.out.print(typeName);
-                input = in.nextLine();
-                System.out.println(departmentService.getHeadOfDepartment(input));
-                showCommands();
-                break;
-            case 2:
-                System.out.print(typeName);
-                input = in.nextLine();
-                departmentService.getDepartmentStatistics(input);
-                showCommands();
-                break;
-            case 3:
-                System.out.print(typeName);
-                input = in.nextLine();
-                System.out.println(departmentService.getAverageSalary(input));
-                showCommands();
-                break;
-            case 4:
-                System.out.print(typeName);
-                input = in.nextLine();
-                System.out.println(departmentService.getEmployeeCount(input));
-                showCommands();
-                break;
-            case 5:
-                System.out.print("Global search: ");
-                input = in.nextLine();
-                System.out.println("Results: " + departmentService.globalSearch(input));
-                showCommands();
-                break;
-            case 6:
-                return;
-            default:
-                showCommands();
+        if (commandMap.containsKey(answer)) {
+            commandMap.get(answer).run();
+        } else {
+            runCommands();
         }
     }
 

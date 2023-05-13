@@ -1,5 +1,6 @@
 package com.university.app.services.impl;
 
+import com.university.app.dto.DepartmentStatistics;
 import com.university.app.models.AcademicDegree;
 import com.university.app.models.Department;
 import com.university.app.models.Lecturer;
@@ -36,11 +37,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department.getHeadOfDepartment().getName();
     }
 
-    public void getDepartmentStatistics(String departmentName) {
+    public DepartmentStatistics getDepartmentStatistics(String departmentName) {
         Department department = departmentRepository.findDepartmentByName(departmentName);
         if (!checkExistenceOfDepartment(department)) {
             System.out.println(CORRECT_YOUR_COMMAND);
-            return;
+            return new DepartmentStatistics(0,0,0);
         }
         long assistantCount = department.getLecturers()
                 .stream()
@@ -54,10 +55,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .stream()
                 .filter(l -> l.getAcademicDegree() == AcademicDegree.PROFESSOR)
                 .count();
-        String statistics = "Assistants: " + assistantCount
-                + "\nAssociate Professor: " + associateProfessorCount
-                + "\nProfessor: " + professorCount;
-        System.out.println(statistics);
+        return new DepartmentStatistics(assistantCount, associateProfessorCount, professorCount);
     }
 
     public double getAverageSalary(String departmentName) {
@@ -66,6 +64,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             System.out.println(CORRECT_YOUR_COMMAND);
             return 0;
         }
+        System.out.println("The average salary of " + departmentName + " is: ");
         return department.getLecturers().stream()
                 .mapToDouble(Lecturer::getSalary)
                 .average()
