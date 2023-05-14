@@ -8,7 +8,10 @@ import com.university.app.models.Lecturer;
 import com.university.app.services.DepartmentService;
 import com.university.app.services.LecturerService;
 import jakarta.annotation.PostConstruct;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataInitializer {
     private final DepartmentService departmentService;
     private final LecturerService lecturerService;
@@ -18,7 +21,6 @@ public class DataInitializer {
         this.lecturerService = lecturerService;
     }
 
-    @PostConstruct
     public void inject() {
         Lecturer ivan = new Lecturer("Ivan Petrenko", AcademicDegree.PROFESSOR, 25000);
         Lecturer petro = new Lecturer("Petro Ivanov", AcademicDegree.PROFESSOR, 28000);

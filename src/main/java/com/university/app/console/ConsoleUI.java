@@ -15,6 +15,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ConsoleUI {
+    public static final String SEPARATOR = "_______________________________________________________";
+    public static final String COMMAND_1 = "Type 1: Who is the head of the department.";
+    public static final String COMMAND_2 = "Type 2: Show department statistics.";
+    public static final String COMMAND_3 = "Type 3: Show the average salary for the department.";
+    public static final String COMMAND_4 = "Type 4: Show the count of employees for the department.";
+    public static final String COMMAND_5 = "Type 5: Global search.";
+    public static final String COMMAND_6 = "Type 6: Exit.";
+    public static final String TYPE_SECTION = "Type here: ";
+    public static final String INVALID_COMMAND = "Invalid command. Please, type 1-6.";
+    public static final String GREETINGS = "Hi! My name is Lucky!" + System.lineSeparator()
+            + "I am simple, but pretty amazing info bot." + System.lineSeparator()
+            + "Choose your command for getting more information about your university!" + System.lineSeparator();
     private final Map<String, Command> commands = new HashMap<>();
 
     public ConsoleUI(DepartmentService departmentService) {
@@ -30,20 +42,20 @@ public class ConsoleUI {
         sayHello();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            String menu = "___________________________________________________\n"
-                    + "Type 1: Who is the head of the department.\n"
-                    + "___________________________________________________\n"
-                    + "Type 2: Show department statistics.\n"
-                    + "___________________________________________________\n"
-                    + "Type 3: Show the average salary for the department.\n"
-                    + "___________________________________________________\n"
-                    + "Type 4: Show the count of employees for the department.\n"
-                    + "___________________________________________________\n"
-                    + "Type 5: Global search.\n"
-                    + "___________________________________________________\n"
-                    + "Type 6: Exit.\n"
-                    + "___________________________________________________\n"
-                    + "Type here: ";
+            String menu = SEPARATOR + System.lineSeparator()
+                    + COMMAND_1 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + COMMAND_2 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + COMMAND_3 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + COMMAND_4 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + COMMAND_5 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + COMMAND_6 + System.lineSeparator()
+                    + SEPARATOR + System.lineSeparator()
+                    + TYPE_SECTION;
             System.out.print(menu);
             String commandLine = scanner.nextLine();
             String commandNumber = String.valueOf(commandLine);
@@ -54,14 +66,11 @@ public class ConsoleUI {
                     break;
                 }
             } else {
-                System.out.println("Invalid command");
+                System.out.println(INVALID_COMMAND);
             }
         }
     }
     public void sayHello() {
-        String greetings = "Hi! My name is Lucky!\n"
-                + "I am simple, but pretty amazing info bot.\n"
-                + "Choose your command for getting more information about your university!\n";
-        System.out.print(greetings);
+        System.out.println(GREETINGS);
     }
 }
