@@ -1,14 +1,7 @@
 package com.university.app;
 
-import java.util.Arrays;
-import java.util.List;
 import com.university.app.config.DataInitializer;
 import com.university.app.console.ConsoleUI;
-import com.university.app.models.AcademicDegree;
-import com.university.app.models.Department;
-import com.university.app.models.Lecturer;
-import com.university.app.services.DepartmentService;
-import com.university.app.services.LecturerService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

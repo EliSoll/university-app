@@ -1,9 +1,8 @@
 package com.university.app.commands.impl;
 
-import java.util.Scanner;
 import com.university.app.commands.Command;
-import com.university.app.dto.DepartmentStatistics;
 import com.university.app.services.DepartmentService;
+import java.util.Scanner;
 
 public class AverageSalaryCommand implements Command {
     private final DepartmentService departmentService;

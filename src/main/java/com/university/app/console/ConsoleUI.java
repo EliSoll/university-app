@@ -1,8 +1,5 @@
 package com.university.app.console;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
 import com.university.app.commands.Command;
 import com.university.app.commands.impl.AverageSalaryCommand;
 import com.university.app.commands.impl.DepartmentStatisticsCommand;
@@ -11,22 +8,27 @@ import com.university.app.commands.impl.ExitCommand;
 import com.university.app.commands.impl.GlobalSearchCommand;
 import com.university.app.commands.impl.HeadOfDepartmentCommand;
 import com.university.app.services.DepartmentService;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ConsoleUI {
-    public static final String SEPARATOR = "_______________________________________________________";
+    public static final String SEPARATOR = "______________________________________________________";
     public static final String COMMAND_1 = "Type 1: Who is the head of the department.";
     public static final String COMMAND_2 = "Type 2: Show department statistics.";
     public static final String COMMAND_3 = "Type 3: Show the average salary for the department.";
-    public static final String COMMAND_4 = "Type 4: Show the count of employees for the department.";
+    public static final String COMMAND_4 = "Type 4: Show the count of employees"
+            + " for the department.";
     public static final String COMMAND_5 = "Type 5: Global search.";
     public static final String COMMAND_6 = "Type 6: Exit.";
     public static final String TYPE_SECTION = "Type here: ";
     public static final String INVALID_COMMAND = "Invalid command. Please, type 1-6.";
     public static final String GREETINGS = "Hi! My name is Lucky!" + System.lineSeparator()
             + "I am simple, but pretty amazing info bot." + System.lineSeparator()
-            + "Choose your command for getting more information about your university!" + System.lineSeparator();
+            + "Choose your command for getting more information about your university!"
+            + System.lineSeparator();
     private final Map<String, Command> commands = new HashMap<>();
 
     public ConsoleUI(DepartmentService departmentService) {
@@ -70,6 +72,7 @@ public class ConsoleUI {
             }
         }
     }
+
     public void sayHello() {
         System.out.println(GREETINGS);
     }

@@ -1,8 +1,8 @@
 package com.university.app.services;
 
-import java.util.List;
 import com.university.app.dto.DepartmentStatistics;
 import com.university.app.models.Department;
+import java.util.List;
 
 public interface DepartmentService {
     void save(Department department);

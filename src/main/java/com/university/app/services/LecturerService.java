@@ -1,7 +1,7 @@
 package com.university.app.services;
 
-import java.util.List;
 import com.university.app.models.Lecturer;
+import java.util.List;
 
 public interface LecturerService {
     List<Lecturer> saveAllLecturers(List<Lecturer> lecturerList);

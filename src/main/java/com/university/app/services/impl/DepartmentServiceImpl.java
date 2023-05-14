@@ -7,9 +7,8 @@ import com.university.app.models.Lecturer;
 import com.university.app.repository.DepartmentRepository;
 import com.university.app.repository.LecturerRepository;
 import com.university.app.services.DepartmentService;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
+import org.springframework.stereotype.Service;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
@@ -18,7 +17,8 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     private final LecturerRepository lecturerRepository;
 
-    public DepartmentServiceImpl(DepartmentRepository departmentRepository, LecturerRepository lecturerRepository) {
+    public DepartmentServiceImpl(DepartmentRepository departmentRepository,
+                                 LecturerRepository lecturerRepository) {
         this.departmentRepository = departmentRepository;
         this.lecturerRepository = lecturerRepository;
     }
