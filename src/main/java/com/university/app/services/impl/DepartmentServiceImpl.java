@@ -32,7 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
         if (!checkExistenceOfDepartment(department)) {
             return CORRECT_YOUR_COMMAND;
         }
-        System.out.print("Head of " + departmentName + " department is ");
+        System.out.print("Head of " + department.getName() + " department is ");
         return department.getHeadOfDepartment().getName();
     }
 
@@ -63,7 +63,7 @@ public class DepartmentServiceImpl implements DepartmentService {
             System.out.println(CORRECT_YOUR_COMMAND);
             return 0;
         }
-        System.out.println("The average salary of " + departmentName + " is: ");
+        System.out.println("The average salary of " + department.getName() + " is: ");
         return department.getLecturers().stream()
                 .mapToDouble(Lecturer::getSalary)
                 .average()
