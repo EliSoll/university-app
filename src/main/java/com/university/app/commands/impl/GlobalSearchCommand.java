@@ -1,3 +1,9 @@
+/**
+ The GlobalSearchCommand class represents a command that performs a global search.
+ It implements the Command interface.
+ @author Elvira Solnyshkina
+ */
+
 package com.university.app.commands.impl;
 
 import com.university.app.commands.Command;
@@ -12,6 +18,10 @@ public class GlobalSearchCommand implements Command {
         this.departmentService = departmentService;
     }
 
+    /**
+     Executes the command by prompting the user to enter a search query
+     and displaying the results of the global search.
+     */
     @Override
     public void execute() {
         System.out.print("Global search: ");

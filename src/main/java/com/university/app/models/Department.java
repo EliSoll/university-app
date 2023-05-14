@@ -1,3 +1,12 @@
+/**
+
+ The Department class represents a department in the university system.
+ It contains information about the department's ID, name, list of lecturers,
+ and the head of the department.
+ @author Elvira Solnyshkina
+ @version 1.0
+ */
+
 package com.university.app.models;
 
 import jakarta.persistence.CascadeType;

@@ -1,3 +1,10 @@
+/**
+ The EmployeeCountCommand class represents a command
+ that retrieves the employee count of a department.
+ It implements the Command interface.
+ @author Elvira Solnyshkina
+ */
+
 package com.university.app.commands.impl;
 
 import com.university.app.commands.Command;
@@ -11,6 +18,10 @@ public class EmployeeCountCommand implements Command {
         this.departmentService = departmentService;
     }
 
+    /**
+     Executes the command by prompting the user for a department name
+     and displaying the employee count.
+     */
     @Override
     public void execute() {
         System.out.print("Type your department: ");

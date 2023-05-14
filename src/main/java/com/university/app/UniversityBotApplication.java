@@ -1,3 +1,15 @@
+/**
+ * The main class of the University Bot application.
+ * This class serves as the entry point of the application
+ * and implements the CommandLineRunner interface
+ * to execute the bot functionality upon application startup.
+ * The application uses the Spring Boot framework for configuration and initialization.
+ *
+ * @author Elvira Solnyshkina
+ * @see com.university.app.console.ConsoleUI
+ * @see com.university.app.config.DataInitializer
+ */
+
 package com.university.app;
 
 import com.university.app.config.DataInitializer;

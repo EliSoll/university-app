@@ -1,3 +1,10 @@
+/**
+ The Lecturer class represents a lecturer entity in the university system.
+ It contains information about the lecturer's ID, name, academic degree, and salary.
+ @author Elvira Solnyshkina
+ @version 1.0
+ */
+
 package com.university.app.models;
 
 import jakarta.persistence.Column;

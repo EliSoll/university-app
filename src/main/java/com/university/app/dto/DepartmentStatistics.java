@@ -1,3 +1,11 @@
+/**
+ DepartmentStatistics represents the statistics of a department,
+ including the count of assistants, associate professors, and professors.
+ This class is not recommended to be replaced with a record due to potential
+ conflicts with the current Checkstyle version.
+ @author Elvira Solnyshkina
+ */
+
 package com.university.app.dto;
 
 import java.util.Objects;

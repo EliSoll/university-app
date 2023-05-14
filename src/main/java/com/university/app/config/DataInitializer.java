@@ -1,3 +1,14 @@
+/**
+ DataInitializer is responsible for initializing the data
+ in the university information system.
+ It populates the system with sample departments and lecturers,
+ and establishes the relationships between them.
+ The initialized data includes departments like Computer Science,
+ Engineering, Math, and Data Science, along with corresponding lecturers
+ and their academic degrees and salaries.
+ @author Elvira Solnyshkina
+ */
+
 package com.university.app.config;
 
 import com.university.app.models.AcademicDegree;

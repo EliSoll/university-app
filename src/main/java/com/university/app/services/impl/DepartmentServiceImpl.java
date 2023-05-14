@@ -1,3 +1,17 @@
+/**
+ * Implementation of the {@link DepartmentService} interface
+ * that provides functionality to manage departments.
+ * This service interacts with the {@link DepartmentRepository}
+ * and {@link LecturerRepository} to perform
+ * CRUD operations and retrieve information related to departments and lecturers.
+ *
+ * @author Elvira Solnyshkina
+ * @version 1.0
+ * @see DepartmentService
+ * @see DepartmentRepository
+ * @see LecturerRepository
+ */
+
 package com.university.app.services.impl;
 
 import com.university.app.dto.DepartmentStatistics;
@@ -23,10 +37,21 @@ public class DepartmentServiceImpl implements DepartmentService {
         this.lecturerRepository = lecturerRepository;
     }
 
+    /**
+     * Saves a department.
+     *
+     * @param department the department to save
+     */
     public void save(Department department) {
         departmentRepository.save(department);
     }
 
+    /**
+     * Retrieves the head of department by department name.
+     *
+     * @param departmentName the name of the department
+     * @return the head of the department
+     */
     public String getHeadOfDepartment(String departmentName) {
         Department department = departmentRepository.findDepartmentByName(departmentName);
         if (!checkExistenceOfDepartment(department)) {
@@ -36,11 +61,19 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department.getHeadOfDepartment().getName();
     }
 
+    /**
+     * Retrieves the statistics of a department, including
+     * the number of assistants, associate professors,
+     * and professors in the department.
+     *
+     * @param departmentName the name of the department
+     * @return the department statistics
+     */
     public DepartmentStatistics getDepartmentStatistics(String departmentName) {
         Department department = departmentRepository.findDepartmentByName(departmentName);
         if (!checkExistenceOfDepartment(department)) {
             System.out.println(CORRECT_YOUR_COMMAND);
-            return new DepartmentStatistics(0,0,0);
+            return new DepartmentStatistics(0, 0, 0);
         }
         long assistantCount = department.getLecturers()
                 .stream()
@@ -57,6 +90,12 @@ public class DepartmentServiceImpl implements DepartmentService {
         return new DepartmentStatistics(assistantCount, associateProfessorCount, professorCount);
     }
 
+    /**
+     * Retrieves the average salary for the department.
+     *
+     * @param departmentName the name of the department
+     * @return the average salary of the department
+     */
     public double getAverageSalary(String departmentName) {
         Department department = departmentRepository.findDepartmentByName(departmentName);
         if (!checkExistenceOfDepartment(department)) {
@@ -70,6 +109,12 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .orElse(0.0);
     }
 
+    /**
+     * Retrieves the employee count for the department.
+     *
+     * @param departmentName the name of the department
+     * @return the employee count of the department
+     */
     public int getEmployeeCount(String departmentName) {
         Department department = departmentRepository.findDepartmentByName(departmentName);
         if (!checkExistenceOfDepartment(department)) {
@@ -80,6 +125,14 @@ public class DepartmentServiceImpl implements DepartmentService {
         return department.getLecturers().size();
     }
 
+    /**
+     * Performs a global search by the given template and retrieves
+     * a list of matching names. The search is case-insensitive and looks for lecturers
+     * whose names contain the provided template.
+     *
+     * @param template the search template
+     * @return the list of matching
+     */
     public List<String> globalSearch(String template) {
         List<String> result = lecturerRepository.findByNameContainingIgnoreCase(template).stream()
                 .map(Lecturer::getName)
@@ -87,6 +140,13 @@ public class DepartmentServiceImpl implements DepartmentService {
         return result;
     }
 
+    /**
+     * Checks the existence of a department and displays
+     * the list of available departments if not found.
+     *
+     * @param department the department to check
+     * @return true if the department exists, false otherwise
+     */
     private boolean checkExistenceOfDepartment(Department department) {
         if (department == null) {
             System.out.println("Ooops! Can't find this department."

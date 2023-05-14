@@ -1,3 +1,11 @@
+/**
+ ConsoleUI represents the console user interface for interacting
+ with the university information system.
+ It provides a menu-based interface where users can choose different
+ commands to retrieve information about the university.
+ @author Elvira Solnyshkina
+ */
+
 package com.university.app.console;
 
 import com.university.app.commands.Command;

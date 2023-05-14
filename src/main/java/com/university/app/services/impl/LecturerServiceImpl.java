@@ -1,3 +1,13 @@
+/**
+ * Implementation of the LecturerService interface that provides functionality to manage lecturers.
+ * This service interacts with the LecturerRepository to perform CRUD operations on lecturers.
+ *
+ * @author Elvira Solnyshkina
+ * @version 1.0
+ * @see LecturerService
+ * @see LecturerRepository
+ */
+
 package com.university.app.services.impl;
 
 import com.university.app.models.Lecturer;
@@ -15,6 +25,12 @@ public class LecturerServiceImpl implements LecturerService {
         this.lecturerRepository = lecturerRepository;
     }
 
+    /**
+     * Saves a list of lecturers.
+     *
+     * @param lecturerList the list of lecturers to save
+     * @return the saved lecturers
+     */
     public List<Lecturer> saveAllLecturers(List<Lecturer> lecturerList) {
         return lecturerRepository.saveAll(lecturerList);
     }
