@@ -1,7 +1,7 @@
 package com.university.app.services.impl;
 
 import com.university.app.models.Lecturer;
-import com.university.app.repositories.LecturerRepository;
+import com.university.app.repository.LecturerRepository;
 import com.university.app.services.LecturerService;
 import org.springframework.stereotype.Service;
 

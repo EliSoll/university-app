@@ -4,13 +4,12 @@ import com.university.app.dto.DepartmentStatistics;
 import com.university.app.models.AcademicDegree;
 import com.university.app.models.Department;
 import com.university.app.models.Lecturer;
-import com.university.app.repositories.DepartmentRepository;
-import com.university.app.repositories.LecturerRepository;
+import com.university.app.repository.DepartmentRepository;
+import com.university.app.repository.LecturerRepository;
 import com.university.app.services.DepartmentService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
