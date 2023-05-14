@@ -17,7 +17,7 @@
 
 This is a simple Spring Boot application that provides a console interface for managing a university's departments and lecturers. It allows you to perform various commands to retrieve information about departments, head of departments, statistics, average salary, employee count, and perform a global search.
 
-Video presentation of this application: [video](link)
+Video presentation of this application: [video](https://www.loom.com/share/09c5a6df10d44925ad2d6bedcb644f01)
 ### 🔨Technologies
 
 - Java  ```v.17.0.5 ```
