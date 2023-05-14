@@ -123,7 +123,7 @@ Elvira Solnyshkina - elvira.solnyshkina@gmail.com
 LinkedIn: [linkedin.com/in/elvira-solnyshkina](https://www.linkedin.com/in/elvira-solnyshkina-232958117/)
 <div align="right"><img src="https://i.ibb.co/cJyzyTZ/629b7b077c5cd817694c3233.png" alt="Logo" width="180" height="60">
 
-Project Link: [EliSoll/cinema-spring-app](https://github.com/EliSoll/university-app)</div>
+Project Link: [EliSoll/university-app](https://github.com/EliSoll/university-app)</div>
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/elvira-solnyshkina-232958117/
