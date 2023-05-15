@@ -1,5 +1,4 @@
 /**
-
  The Department class represents a department in the university system.
  It contains information about the department's ID, name, list of lecturers,
  and the head of the department.
@@ -53,19 +52,5 @@ public class Department {
     }
 
     public Department() {
-    }
-
-    public List<Lecturer> getLecturers() {
-        return lecturers;
-    }
-
-    @Override
-    public String toString() {
-        return "Department{"
-                + "id=" + id
-                + ", name='" + name + '\''
-                + ", lectors=" + lecturers
-                + ", headOfDepartment=" + headOfDepartment
-                + '}';
     }
 }

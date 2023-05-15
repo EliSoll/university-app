@@ -17,7 +17,7 @@
 
 This is a simple Spring Boot application that provides a console interface for managing a university's departments and lecturers. It allows you to perform various commands to retrieve information about departments, head of departments, statistics, average salary, employee count, and perform a global search.
 
-Video presentation of this application: [video](https://www.loom.com/share/09c5a6df10d44925ad2d6bedcb644f01)
+Video presentation of this application and testing: [watch video](https://www.loom.com/share/09c5a6df10d44925ad2d6bedcb644f01)
 ### 🔨Technologies
 
 - Java  ```v.17.0.5 ```
@@ -35,13 +35,31 @@ Video presentation of this application: [video](https://www.loom.com/share/09c5a
 ## Getting Started
 To run the application locally, follow these steps:
 
-1. Clone the GitHub repository: [repository-link](https://github.com/EliSoll/university-app)
+1. Clone the GitHub repository: [repository](https://github.com/EliSoll/university-app)
 2. Ensure that you have Java 17 and Maven installed on your system.
 3. Configure the MySQL database connection properties in the `application.properties` file.
 4. Build the project using the command: `mvn clean install`
 5. Run the application using the command: `mvn spring-boot:run`
 6. The application will start and display the console interface.
 
+### Existing Department and Lecturers
+
+- Computer Science 
+    - Head of Department: Ivan Petrenko 
+    - Lecturers: Ivan Petrenko, Alice Loyd 
+
+- Engineering 
+    - Head of Department: Petro Ivanov 
+    - Lecturers: Petro Ivanov, Bob Darren, Alice Loyd
+
+- Math
+    - Head of Department: Alice Loyd
+    - Lecturers: Ivan Petrenko, Bob Darren, Petro Ivanov, Alice Loyd 
+
+- Data Science
+    - Head of Department: Bob Darren 
+    - Lecturers: Bob Darren, Alice Loyd
+  
 ## Structure
 
 The project follows a standard Maven project structure with the main code located in the `src/main/java` directory. The important files and directories are as follows:

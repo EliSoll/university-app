@@ -1,5 +1,4 @@
 /**
-
  The AcademicDegree enumeration represents the different academic degrees
  that a lecturer can have in the university system.
  The available academic degrees are ASSISTANT, ASSOCIATE_PROFESSOR, and PROFESSOR.

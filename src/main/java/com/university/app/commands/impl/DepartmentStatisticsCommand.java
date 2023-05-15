@@ -20,19 +20,13 @@ public class DepartmentStatisticsCommand implements Command {
         this.departmentService = departmentService;
     }
 
-    /**
-     Executes the command by prompting the user for a department name
-     and displaying the department statistics.
-     The statistics include the number of assistants, associate professors,
-     and professors in the department.
-     */
     @Override
     public void execute() {
         System.out.print("Type your department: ");
         String input = new Scanner(System.in).nextLine();
         DepartmentStatistics stats = departmentService.getDepartmentStatistics(input);
-        System.out.println("Assistants: " + stats.assistantCount());
-        System.out.println("Associate professors: " + stats.associateProfessorCount());
-        System.out.println("Professors: " + stats.professorCount());
+        System.out.println("Assistants: " + stats.getAssistantCount());
+        System.out.println("Associate professors: " + stats.getAssociateProfessorCount());
+        System.out.println("Professors: " + stats.getProfessorCount());
     }
 }

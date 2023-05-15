@@ -17,10 +17,6 @@ public class HeadOfDepartmentCommand implements Command {
         this.departmentService = departmentService;
     }
 
-    /**
-     Executes the command by prompting the user to enter a department name
-     and displaying the head of the department.
-     */
     @Override
     public void execute() {
         System.out.print("Type your department: ");

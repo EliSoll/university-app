@@ -16,10 +16,6 @@ public class ExitCommand implements Command {
         this.departmentService = departmentService;
     }
 
-    /**
-     Executes the command by displaying a farewell message.
-     End of console application.
-     */
     @Override
     public void execute() {
         System.out.print("See you!\n");

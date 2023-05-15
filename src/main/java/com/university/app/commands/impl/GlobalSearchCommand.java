@@ -18,10 +18,6 @@ public class GlobalSearchCommand implements Command {
         this.departmentService = departmentService;
     }
 
-    /**
-     Executes the command by prompting the user to enter a search query
-     and displaying the results of the global search.
-     */
     @Override
     public void execute() {
         System.out.print("Global search: ");
